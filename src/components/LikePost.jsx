@@ -1,16 +1,13 @@
 import React, { useState } from 'react'
+import parentComp from './HOC'
+function LikePost({handleCount,counter}) {
 
-export default function LikePost() {
-
-  const [likePostCounter, setPostCounter] = useState(0);
-
-  const handlePostCount = ()=>{
-    setPostCounter(likePostCounter+1);
-  }
+  
 
   return (
     <div>
-      <button onClick={handlePostCount}>Like Post {likePostCounter}</button>
+      <button onClick={handleCount}>Like Post {counter}</button>
     </div>
   )
 }
+export default parentComp(LikePost)

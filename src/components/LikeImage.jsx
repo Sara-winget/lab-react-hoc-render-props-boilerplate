@@ -1,16 +1,12 @@
 import React, { useState } from 'react'
+import parentComp from './HOC';
+ function LikeImage({handleCount,counter}) {
 
-export default function LikeImage() {
-
-  const [likeImageCounter, setLikeImageCounter] = useState(0);
-
-  const handleLikeImageCount = ()=>{
-    setLikeImageCounter(likeImageCounter+1);
-  }
-
+  
   return (
     <div>
-      <button onClick={handleLikeImageCount}>Like Image {likeImageCounter}</button>
+      <button onClick={handleCount}>Like Image {counter}</button>
     </div>
   )
 }
+export default parentComp(LikeImage);
